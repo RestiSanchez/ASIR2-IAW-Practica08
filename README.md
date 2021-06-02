@@ -12,3 +12,26 @@ Se necesitará las siguientes máquinas:
   - Servidor de Base de Datos MySQL
 
 ![Arquitectura](arquitectura.png)
+
+## Fases de la práctica
+
+  - Fase 00 -> Instalación de wordpress en un nivel ( Un servidor con todo lo necesario )
+  - Fase 01 -> Instalación de wordpress en dos niveles ( Servidor Web y Servidor MySQL )
+  - Fase 02 -> Instalación de wordpress en tres niveles ( Balanceador , 2 servidores Webs y Servidor MySQL )
+
+## Tareas a realizar
+
+### Balanceador de carga
+- Instalar el software necesario
+- Habilitar los módulos necesarios y configurar Apache HTTP Server como proxy inverso
+### *Front-end* 
+- Instalar el software necesario
+- Descargar la última versión de Wordpress y descomprimir en el directorio apropiado
+- Configurar Wordpress para que pueda conectar con MySQL
+- Sincronizar el contenido estático en la capa *Front-end*
+- Configuración de las Security Keys
+### *Back-end*
+- Instalar el software necesario
+- Configurar MySQL para que acepte conexiones que no sean de localhost
+- Crear una base de datos para Wordpress y asignarle permisos apropiados
+
