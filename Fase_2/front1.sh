@@ -71,7 +71,7 @@ cp 000-default.conf /etc/apache2/sites-available/000-default.conf
 #Reiniciamos Apache
 systemctl restart apache2 
 
-#Configuramos el archivo wp-config.php !! REVISAR d* (d=delete)
+#Configuramos el archivo wp-config.php
 sed -i "/AUTH_KEY/d" /var/www/html/wordpress/wp-config.php
 sed -i "/SECURE_AUTH_KEY/d" /var/www/html/wordpress/wp-config.php
 sed -i "/LOGGED_IN_KEY/d" /var/www/html/wordpress/wp-config.php
@@ -84,10 +84,10 @@ sed -i "/NONCE_SALT/d" /var/www/html/wordpress/wp-config.php
 #Hacemos una llamada a la API de wordpress para obtener las security keys
 SECURITY_KEYS=$(curl https://api.wordpress.org/secret-key/1.1/salt/)
 
-#Reemplaza el carácter / por el carácter _ !! REVISAR "/"
+#Reemplaza el carácter / por el carácter _ 
 SECURITY_KEYS=$(echo $SECURITY_KEYS | tr / _)
 
-#Añadimos los security keys al archivo !! REVISAR "/@/a"
+#Añadimos los security keys al archivo
 sed -i "/@-/a $SECURITY_KEYS" /var/www/html/wordpress/wp-config.php
 
 # Eliminamos el archivo index.html del /var/www/html
