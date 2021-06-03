@@ -5,9 +5,9 @@ set -x
 DB_NAME=wordpress_db
 DB_USER=wordpress_user
 DB_PASSWORD=wordpress_password
-IP_PUBLICA_BALANCEADOR=3.89.117.114
-IP_PRIVADA_MYSQL_SERVER=172.31.81.149
-IP_PRIVADA_FRONTEND_NFS_CLIENT=172.31.92.228
+IP_PUBLICA_BALANCEADOR=3.84.54.46
+IP_PRIVADA_MYSQL_SERVER=172.31.86.103
+IP_PRIVADA_FRONTEND_NFS_CLIENT=172.31.95.232
 
 #Actualizamos
 apt update
@@ -19,7 +19,7 @@ apt install apache2 -y
 apt install php libapache2-mod-php php-mysql -y
 
 #Copiamos el archivo info.php a /var/www/html
-sudo cp /home/ubuntu/info.php /var/www/html
+sudo cp /home/ubuntu/ASIR2-IAW-Practica08/Fase_2/info.php /var/www/html
 
 #Reiniciamos el servicio de Apache
 systemctl restart apache2
