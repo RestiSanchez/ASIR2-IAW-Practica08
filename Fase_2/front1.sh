@@ -61,12 +61,13 @@ sed -i "s#wp-blog-header.php#wordpress/wp-blog-header.php#" /var/www/html/index.
 
 a2enmod rewrite
 
+cd /home/ubuntu
 #Copiamos el archivo htaccess a /var/www/html
-cd iaw-practica-8/FASE2
-cp htaccess /var/www/html/.htaccess
+cp ASIR2-IAW-Practica08/Fase_1/htaccess /var/www/html/.htaccess
 
 #Copiamos el archivo de configuración de Apache
-cp 000-default.conf /etc/apache2/sites-available/000-default.conf
+cp ASIR2-IAW-Practica08/Fase_1/000-default.conf /etc/apache2/sites-available/000-default.conf
+
 
 #Reiniciamos Apache
 systemctl restart apache2 
