@@ -6,9 +6,9 @@ set -x
 DB_NAME=wordpress_db
 DB_USER=wordpress_user
 DB_PASSWORD=wordpress_password
-IP_PRIVADA_FRONTEND=
-IP_PRIVADA_MYSQL_SERVER=
-IP_PUBLICA_FRONTEND=
+IP_PRIVADA_FRONTEND=172.31.62.193
+IP_PRIVADA_MYSQL_SERVER=172.31.53.230
+IP_PUBLICA_FRONTEND=54.236.56.144
 
 #Actualizamos
 apt update
@@ -59,14 +59,12 @@ sed -i "s#wp-blog-header.php#wordpress/wp-blog-header.php#" /var/www/html/index.
 #Habilitamos el módulo mod_rewrite de Apache
 
 a2enmod rewrite
-
+cd /home/ubuntu
 #Copiamos el archivo htaccess a /var/www/html
-cd ASIR2-IAW-Practica08/Fase_1
-cp htaccess /var/www/html/.htaccess
+cp ASIR2-IAW-Practica08/Fase_1/htaccess /var/www/html/.htaccess
 
 #Copiamos el archivo de configuración de Apache
-cd ASIR2-IAW-Practica08/Fase_1
-cp 000-default.conf /etc/apache2/sites-available/000-default.conf
+cp ASIR2-IAW-Practica08/Fase_1/000-default.conf /etc/apache2/sites-available/000-default.conf
 
 #Reiniciamos Apache
 systemctl restart apache2 
