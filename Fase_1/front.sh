@@ -2,6 +2,7 @@
 #!/bin/bash
 set -x
 
+
 #VARIABLES
 DB_NAME=wordpress_db
 DB_USER=wordpress_user
