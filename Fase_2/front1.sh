@@ -63,10 +63,10 @@ a2enmod rewrite
 
 cd /home/ubuntu
 #Copiamos el archivo htaccess a /var/www/html
-cp ASIR2-IAW-Practica08/Fase_1/htaccess /var/www/html/.htaccess
+cp ASIR2-IAW-Practica08/Fase_2/htaccess /var/www/html/.htaccess
 
 #Copiamos el archivo de configuración de Apache
-cp ASIR2-IAW-Practica08/Fase_1/000-default.conf /etc/apache2/sites-available/000-default.conf
+cp ASIR2-IAW-Practica08/Fase_2/000-default.conf /etc/apache2/sites-available/000-default.conf
 
 
 #Reiniciamos Apache
