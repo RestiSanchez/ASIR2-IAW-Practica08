@@ -5,8 +5,8 @@ set -x
 # Variables de configuración
 #-----------------------------------
 
-IP_FRONT_1=
-IP_FRONT_2=
+IP_FRONT_1=3.86.192.65
+IP_FRONT_2=52.91.163.43
 
 # Actualizamos la lista de paquetes
 apt update
@@ -30,7 +30,7 @@ a2enmod proxy_html
 a2enmod lbmethod_byrequests
 
 # Descargamos y copiamos el archivo de configuración de Apache
-cp 000-default.conf /etc/apache2/sites-available/
+cp /home/ubuntu/ASIR2-IAW-Practica08/Fase_2/000-default.conf /etc/apache2/sites-available/
 
 #Reemplazamos los valores de IP-HTTP-SERVER-1 y IP-HTTP-SERVER-2
 sed -i "s/IP-HTTP-SERVER-1/$IP_FRONT_1/" /etc/apache2/sites-available/000-default.conf
